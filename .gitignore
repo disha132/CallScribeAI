@@ -19,3 +19,7 @@ build/
 
 # Coverage
 coverage/
+
+whisper-env/
+__pycache__/
+*.pyc
