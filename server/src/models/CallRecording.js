@@ -34,6 +34,26 @@ const callRecordingSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+
+    summary: {
+      type: String,
+      default: "",
+    },
+
+    keyPoints: {
+      type: [String],
+      default: [],
+    },
+
+    actionItems: {
+      type: [String],
+      default: [],
+    },
+
+    decisions: {
+      type: [String],
+      default: [],
+    },
   },
   {
     timestamps: true,

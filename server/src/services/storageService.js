@@ -48,8 +48,21 @@ const downloadAudioToTempFile = async (filePath) => {
   return tempFilePath;
 };
 
+const deleteAudio = async (filePath) => {
+  const { data, error } = await supabase.storage
+    .from("call-recordings")
+    .remove([filePath]);
+
+  if (error) {
+    throw new Error(`Supabase delete failed: ${error.message}`);
+  }
+
+  return data;
+};
+
 module.exports = {
   uploadAudio,
   downloadAudio,
   downloadAudioToTempFile,
+  deleteAudio,
 };
